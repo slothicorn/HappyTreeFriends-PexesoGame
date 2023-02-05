@@ -49,8 +49,8 @@ const grid = document.createElement('section');
 grid.setAttribute('class', 'grid');
 game.appendChild(grid);
 
-for (let i = 0; i < gameGrid.length; i++) {
-    let card = document.createElement('div');
+for (i = 0; i < gameGrid.length; i++) {
+    const card = document.createElement('div');
     card.classList.add('card');
 
     card.dataset.name = gameGrid[i].name;
@@ -58,3 +58,20 @@ for (let i = 0; i < gameGrid.length; i++) {
     card.style.backgroundImage = `url(${gameGrid[i].img})`;
     grid.appendChild(card);
 }
+
+let firstGuess = '';
+let secondGuess = '';
+let count = 0;
+
+grid.addEventListener('click', (event) => {
+    const clicked = event.target;
+
+    if (clicked.nodeName == 'SECTION') {
+        return;
+    }
+
+    if (count < 2) {
+        count++;
+        clicked.classList.add('selected');
+    }
+});
