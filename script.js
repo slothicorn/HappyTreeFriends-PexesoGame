@@ -62,6 +62,16 @@ for (i = 0; i < gameGrid.length; i++) {
 let firstGuess = '';
 let secondGuess = '';
 let count = 0;
+let previousTarget = null;
+
+const match = () => {
+    const selected = document.querySelectorAll('.selected');
+
+    for (i = 0; i < selected.length; i++) {
+        selected[i].classList.add('match');
+
+    }
+};
 
 grid.addEventListener('click', (event) => {
     const clicked = event.target;
@@ -72,6 +82,20 @@ grid.addEventListener('click', (event) => {
 
     if (count < 2) {
         count++;
-        clicked.classList.add('selected');
+        if (count === 1) {
+            firstGuess = clicked.dataset.name;
+            clicked.classList.add('selected');
+        } else {
+            secondGuess = clicked.dataset.name;
+            clicked.classList.add('selected');
+        }
+
+        if (firstGuess !== '' && secondGuess !== '') {
+            if (firstGuess == secondGuess) {
+                match();
+            }
+        }
+
+        previousTarget = clicked;
     }
 });
