@@ -37,18 +37,20 @@ const cardsArray = [
     }
 ]
 
+const gameGrid = cardsArray.concat(cardsArray);
+
 const game = document.getElementById('game-board');
 const grid = document.createElement('section');
 
 grid.setAttribute('class', 'grid');
 game.appendChild(grid);
 
-for (let i = 0; i < cardsArray.length; i++) {
+for (let i = 0; i < gameGrid.length; i++) {
     let card = document.createElement('div');
     card.classList.add('card');
 
-    card.dataset.name = cardsArray[i].name;
+    card.dataset.name = gameGrid[i].name;
 
-    card.style.backgroundImage = `url(${cardsArray[i].img})`;
+    card.style.backgroundImage = `url(${gameGrid[i].img})`;
     grid.appendChild(card);
 }
