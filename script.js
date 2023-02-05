@@ -55,15 +55,23 @@ for (i = 0; i < gameGrid.length; i++) {
 
     card.dataset.name = gameGrid[i].name;
 
-    card.style.backgroundImage = `url(${gameGrid[i].img})`;
+    const frontSide = document.createElement('div');
+    frontSide.classList.add('front');
+
+    const backSide = document.createElement('div');
+    backSide.classList.add('back');
+    backSide.style.backgroundImage = `url(${gameGrid[i].img})`;
+
     grid.appendChild(card);
+    card.appendChild(frontSide);
+    card.appendChild(backSide);
 }
 
 let firstGuess = '';
 let secondGuess = '';
 let count = 0;
 let previousTarget = null;
-const delay = 1200;
+const delay = 1000;
 
 const match = () => {
     const selected = document.querySelectorAll('.selected');
@@ -95,11 +103,11 @@ grid.addEventListener('click', (event) => {
     if (count < 2) {
         count++;
         if (count === 1) {
-            firstGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+            firstGuess = clicked.parentNode.dataset.name;
+            clicked.parentNode.classList.add('selected');
         } else {
-            secondGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+            secondGuess = clicked.parentNode.dataset.name;
+            clicked.parentNode.classList.add('selected');
         }
 
         if (firstGuess !== '' && secondGuess !== '') {
