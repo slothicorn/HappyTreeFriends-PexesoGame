@@ -39,6 +39,10 @@ const cardsArray = [
 
 const gameGrid = cardsArray.concat(cardsArray);
 
+gameGrid.sort(() => {
+    return 0.5 - Math.random();
+});
+
 const game = document.getElementById('game-board');
 const grid = document.createElement('section');
 
