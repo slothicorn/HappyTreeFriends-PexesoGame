@@ -69,14 +69,25 @@ const match = () => {
 
     for (i = 0; i < selected.length; i++) {
         selected[i].classList.add('match');
+    }
+};
 
+const resetGuesses = () => {
+    firstGuess = '';
+    secondGuess = '';
+    count = 0;
+    previousTarget = null;
+
+    const selected = document.querySelectorAll('.selected');
+    for (i = 0; i < selected.length; i++) {
+        selected[i].classList.remove('selected');
     }
 };
 
 grid.addEventListener('click', (event) => {
     const clicked = event.target;
 
-    if (clicked.nodeName == 'SECTION') {
+    if (clicked.nodeName == 'SECTION' || clicked == previousTarget || clicked.parentNode.classList.contains('match')) {
         return;
     }
 
@@ -93,6 +104,9 @@ grid.addEventListener('click', (event) => {
         if (firstGuess !== '' && secondGuess !== '') {
             if (firstGuess == secondGuess) {
                 match();
+                resetGuesses();
+            } else {
+                resetGuesses();
             }
         }
 
