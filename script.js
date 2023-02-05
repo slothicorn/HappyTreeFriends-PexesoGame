@@ -63,6 +63,7 @@ let firstGuess = '';
 let secondGuess = '';
 let count = 0;
 let previousTarget = null;
+const delay = 1200;
 
 const match = () => {
     const selected = document.querySelectorAll('.selected');
@@ -103,10 +104,10 @@ grid.addEventListener('click', (event) => {
 
         if (firstGuess !== '' && secondGuess !== '') {
             if (firstGuess == secondGuess) {
-                match();
-                resetGuesses();
+                setTimeout(match, delay);
+                setTimeout(resetGuesses, delay);
             } else {
-                resetGuesses();
+                setTimeout(resetGuesses, delay);
             }
         }
 
