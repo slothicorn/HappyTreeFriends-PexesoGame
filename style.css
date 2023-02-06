@@ -27,7 +27,7 @@ body {
   text-align: center;
   align-content: center;
   text-transform: uppercase;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .game-board {
@@ -71,6 +71,7 @@ body {
 .front {
   z-index: 2;
   background: #a795ac url("img/logo.webp") no-repeat center center/contain;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
 }
 
 .back {
@@ -99,7 +100,7 @@ body {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding: 1rem 3rem;
-  margin: 1rem 0 5rem;
+  padding: 1.5rem 3rem;
+  margin: 3rem 0 5rem;
   border-radius: 999px;
-}/*# sourceMappingURL=style.css.map */
+  }
