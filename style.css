@@ -70,7 +70,7 @@ body {
 
 .front {
   z-index: 2;
-  background: #a795ac url("../img/logo.webp") no-repeat center center/contain;
+  background: #a795ac url("img/logo.webp") no-repeat center center/contain;
 }
 
 .back {
