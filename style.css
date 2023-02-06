@@ -1,59 +1,100 @@
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 20px 0;
-    background: #6589F9;
+  min-height: 100vh;
+  width: 100vw;
+  background: #eeecee;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.title {
+  display: grid;
+  color: #a795ac;
+  font-size: clamp(2rem, 5vw, 6rem);
+  text-align: center;
+  align-content: center;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.game-board {
+  display: grid;
+  place-items: center;
 }
 
 .grid {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: grid;
+  width: clamp(10rem, 95vw, 100rem);
+  gap: 2vw;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(7rem, 12vw, 50rem), 1fr) minmax(clamp(7rem, 12vw, 50rem), 1fr));
 }
 
 .card {
-    position: relative;
-    transition: all .4s linear;
-    transform-style: preserve-3d;
-    margin: 5px;
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
 }
 
 .card,
 .back,
 .front {
-    height: 150px;
-    width: 150px;
+  aspect-ratio: 1;
+  width: 100%;
 }
 
 .back,
 .front {
-    position: absolute;
-    backface-visibility: hidden;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front {
-    z-index: 2;
-    background: #FAB942 url('../img/question.gif') no-repeat center center / contain;
+  z-index: 2;
+  background: #a795ac url("/img/logo.webp") no-repeat center center/contain;
 }
 
 .back {
-    transform: rotateY(180deg);
-    background-color: #6589F9;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .selected {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .match .front {
-    background: #6589F9 !important;
+  background: #eeecee;
 }
+
+.play-again-btn {
+  display: grid;
+  place-self: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #eeecee;
+  background: #a795ac;
+  border: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem 3rem;
+  margin: 1rem 0 5rem;
+  border-radius: 999px;
+}/*# sourceMappingURL=style.css.map */
