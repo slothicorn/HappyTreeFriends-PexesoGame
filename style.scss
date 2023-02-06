@@ -40,7 +40,12 @@ body {
     width: clamp(10rem, 95vw, 100rem);
     gap: 2vw;
     place-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(7rem, 12vw, 50rem), 1fr) minmax(clamp(7rem, 12vw, 50rem), 1fr));
+
+    grid-template-columns: repeat(auto-fill, minmax(clamp(8rem, 11vw, 15rem), 1fr) minmax(clamp(8rem, 11vw, 15rem), 1fr));
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(auto-fill, minmax(clamp(11rem, 7vw, 20rem), 1fr) minmax(clamp(11rem, 7vw, 20rem), 1fr));
+    }
 }
 
 .card {
