@@ -42,7 +42,6 @@ body {
   place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(clamp(8rem, 11vw, 15rem), 1fr) minmax(clamp(8rem, 11vw, 15rem), 1fr));
 }
-
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(clamp(11rem, 7vw, 20rem), 1fr) minmax(clamp(11rem, 7vw, 20rem), 1fr));
@@ -66,7 +65,7 @@ body {
 .front {
   position: absolute;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front {
@@ -107,10 +106,7 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   transition: all 0.2s ease;
 }
-
 .play-again-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.55);
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
