@@ -100,9 +100,6 @@ const startNewGame = () => {
     grid.addEventListener('click', (event) => {
         const clicked = event.target;
 
-        console.log(event.target);
-        console.log(previousTarget);
-
         if (clicked.nodeName == 'SECTION' || clicked.parentNode == previousTarget?.parentNode || clicked.parentNode.classList.contains('match')) {
             return;
         }
